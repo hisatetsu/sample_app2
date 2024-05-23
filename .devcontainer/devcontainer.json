@@ -33,6 +33,8 @@
   "postCreateCommand": "",
   "postAttachCommand": {
     "server": "rails server"
+    //hisatetsu_added
+    ,"postCreateCommand": "bin/rails db:migrate RAILS_ENV=development"
   },
   "customizations": {
     "codespaces": {

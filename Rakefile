@@ -4,3 +4,9 @@
 require_relative "config/application"
 
 Rails.application.load_tasks
+
+##hisatetsu
+desc "Reset the database"
+task "db:migrate:reset" do
+  system("bin/rails db:migrate:reset")
+end

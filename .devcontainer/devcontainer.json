@@ -33,7 +33,7 @@
   //"postCreateCommand": "",
   "postCreateCommand": {
     //hisatetsu_added
-    "postCreateCommand": "bin/rails db:migrate;reset"
+    //"postCreateCommand": "bin/rails db:migrate;reset"
   },
   "postAttachCommand": {
     "server": "rails server"

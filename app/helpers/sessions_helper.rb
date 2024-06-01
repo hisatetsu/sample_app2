@@ -53,4 +53,8 @@ module SessionsHelper
     @current_user = nil   # 安全のため
   end
 
+  def store_location
+    session[:forwarding_url] = request.original_url if request.get?
+  end
+
 end

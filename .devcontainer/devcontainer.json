@@ -37,12 +37,12 @@
   },
   "postAttachCommand": {
     //hisatetsu_added
-    "postCreateCommand": "bin/rails db:migrate;reset",
+    //"postCreateCommand": "bin/rails db:migrate;reset",
 
     "server": "rails server"
     //hisatetsu_added
     //,"postCreateCommand": "bin/rails db:migrate RAILS_ENV=production"
-    ,"postCreateCommand": "bin/rails db:migrate;reset"
+    //,"postCreateCommand": "bin/rails db:migrate;reset"
   },
   "customizations": {
     "codespaces": {

@@ -1,5 +1,6 @@
 class User < ApplicationRecord
- attr_accessor :remember_token
+  has_many :microposts, dependent: :destroy
+  attr_accessor :remember_token
  before_save {self.email=email.downcase} 
  validates :name, presence: true
  validates :email, presence: true
@@ -38,5 +39,12 @@ class User < ApplicationRecord
   def session_token
     remember_digest || remember
   end  
+
+
+  # 試作feedの定義
+  # 完全な実装は次章の「ユーザーをフォローする」を参照
+  def feed
+    Micropost.where("user_id = ?", id)
+  end
 
 end

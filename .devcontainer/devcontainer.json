@@ -30,19 +30,9 @@
   //"onCreateCommand": "gem install ruby-lsp -N",
   //# => Solargraph gem not found. Run `gem install solargraph` or update your Gemfile.
   "updateContentCommand": "bundle install",
-  //"postCreateCommand": "",
-  "postCreateCommand": {
-    //hisatetsu_added
-    //"postCreateCommand": "bin/rails db:migrate;reset"
-  },
+  "postCreateCommand": "",
   "postAttachCommand": {
-    //hisatetsu_added
-    //"postCreateCommand": "bin/rails db:migrate;reset",
-
     "server": "rails server"
-    //hisatetsu_added
-    //,"postCreateCommand": "bin/rails db:migrate RAILS_ENV=production"
-    //,"postCreateCommand": "bin/rails db:migrate;reset"
   },
   "customizations": {
     "codespaces": {

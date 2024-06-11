@@ -3,13 +3,17 @@ class SessionsController < ApplicationController
   def new
   end
 
+  ##章ごとで色々変わるので注意。
   def create
     ##session_params = params.require(:session).permit(:email, :password)
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
       forwarding_url = session[:forwarding_url]
       reset_session      # ログインの直前に必ずこれを書くこと
+      params[:session][:remember_me] == '1' ? remember(user) : forget(user)
+      ##remember user
       log_in user
+      ##redirect_to user
       redirect_to forwarding_url || user
     else
       flash.now[:danger] = 'Invalid email/password combination' # 本当は正しくない
@@ -18,7 +22,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    log_out
+    log_out if logged_in?
     redirect_to root_url, status: :see_other
   end
 
